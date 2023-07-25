@@ -1,0 +1,61 @@
+{
+    "create": {
+        "name": "Jeremy Adans",
+        "email": "jeremy@yahoo.com",
+        "age": "29",
+        "weight": "82",
+        "feet_tall": "1.79"
+    },
+    "duplicate": {
+        "name": "Bruce Wayne",
+        "email": "brucewayne@yahoo.com",
+        "age": "35",
+        "weight": "98",
+        "feet_tall": "1.86"
+    },
+    "remove": {
+        "name": "Falcão Delete",
+        "email": "falcao@gmail.com",
+        "age": "22",
+        "weight": "65",
+        "feet_tall": "1.60"
+    },
+    "required": {
+        "name": "",
+        "email": "",
+        "age": "",
+        "weight": "",
+        "feet_tall": ""
+    },
+    "younger": {
+        "name": "Pedro Novo",
+        "email": "pedro15@hotmail.com",
+        "age": "15",
+        "weight": "58",
+        "feet_tall": "1.57"
+    },
+    "invalid_weight": [
+        {"name": "João com Peso 0",
+        "email": "joaopeso0@hotmail.com",
+        "age": "17",
+        "weight": "0",
+        "feet_tall": "1.57"},
+        {"name": "Marcos com Peso Negativo",
+        "email": "marcospesonegativo@hotmail.com",
+        "age": "19",
+        "weight": "-10",
+        "feet_tall": "1.65"}
+    ],
+    "invalid_feet_tall": [
+        {"name": "Rubert com Altura 0",
+        "email": "rubertaltura0@hotmail.com",
+        "age": "17",
+        "weight": "57",
+        "feet_tall": "0"},
+        {"name": "Davi com Altura Negativa",
+        "email": "davialturagativa@hotmail.com",
+        "age": "18",
+        "weight": "97",
+        "feet_tall": "-1.65"}
+    ]
+}
