@@ -47,6 +47,19 @@ describe('alunos', () => {
 
     })
 
+    it('não deve remover um aluno com matricula', () => {
+
+        const student = students.not_remove
+
+        cy.adminLogin()
+
+        studentPage.search(student.name)
+        studentPage.remove(student.email)
+        studentPage.popup.confirm()
+        studentPage.popup.haveText('Não é possível remover um aluno com matrícula cadastrada!')
+
+    })
+
     it('todos os campos são obrigatórios', () => {
 
         const student = students.required

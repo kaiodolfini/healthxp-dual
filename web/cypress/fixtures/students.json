@@ -20,6 +20,13 @@
         "weight": "65",
         "feet_tall": "1.60"
     },
+    "not_remove": {
+        "name": "Fernando Papito",
+        "email": "fernando@yahoo.com",
+        "age": "34",
+        "weight": "85",
+        "feet_tall": "1.70"
+    },
     "required": {
         "name": "",
         "email": "",
