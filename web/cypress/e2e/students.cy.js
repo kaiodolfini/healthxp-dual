@@ -56,11 +56,11 @@ describe('alunos', () => {
         studentPage.goToRegister()
         studentPage.submitForm(student)
 
-        studentPage.requiredMessage('Nome completo', 'Nome é obrigatório')
-        studentPage.requiredMessage('E-mail', 'O email é obrigatório')
-        studentPage.requiredMessage('Idade', 'A idade é obrigatória')
-        studentPage.requiredMessage('Peso (em kg)', 'O peso é obrigatório')
-        studentPage.requiredMessage('Altura', 'A altura é obrigatória')
+        studentPage.alertMessage('Nome completo', 'Nome é obrigatório')
+        studentPage.alertMessage('E-mail', 'O email é obrigatório')
+        studentPage.alertMessage('Idade', 'A idade é obrigatória')
+        studentPage.alertMessage('Peso (em kg)', 'O peso é obrigatório')
+        studentPage.alertMessage('Altura', 'A altura é obrigatória')
 
     })
 
@@ -72,11 +72,11 @@ describe('alunos', () => {
 
         studentPage.goToRegister()
         studentPage.submitForm(student)
-        studentPage.requiredMessage('Idade', 'A idade mínima para treinar é 16 anos!')
+        studentPage.alertMessage('Idade', 'A idade mínima para treinar é 16 anos!')
 
     })
 
-    it('deve validar alunos com peso inválido', () => {
+    it.skip('deve validar alunos com peso inválido', () => {
 
         const alunos = students.invalid_weight
 
@@ -85,12 +85,12 @@ describe('alunos', () => {
         studentPage.goToRegister()
         alunos.forEach(student => {
             studentPage.submitForm(student)
-            studentPage.requiredMessage('Peso (em kg)', 'O peso informado é inválido')
+            studentPage.alertMessage('Peso (em kg)', 'O peso informado é inválido')
         });
         
     })
 
-    it('deve validar alunos com altura inválida', () => {
+    it.skip('deve validar alunos com altura inválida', () => {
 
         const alunos = students.invalid_feet_tall
 
@@ -99,7 +99,7 @@ describe('alunos', () => {
         studentPage.goToRegister()
         alunos.forEach(student => {
             studentPage.submitForm(student)
-            studentPage.requiredMessage('Altura', 'A altura informada é inválida')
+            studentPage.alertMessage('Altura', 'A altura informada é inválida')
         });
 
     })

@@ -11,16 +11,15 @@ class LoginPage {
     }
 
     fill(user) {
-        if (user.email) {
-            cy.get('#email')
-                .clear()
-                .type(user.email)
-        }
-        if (user.password) {
-            cy.get('#password')
-                .clear()
-                .type(user.password)
-        }
+
+        //Criar Alias
+        cy.get('#email').clear().as('email')
+        cy.get('#password').clear().as('password')
+
+        //IF Ternário
+        user.email ? cy.get('@email').type(user.email) : cy.log('empty email')
+        user.password ? cy.get('@password').type(user.password) : cy.log('empty password')
+
     }
 
     submit() {
