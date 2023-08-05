@@ -37,3 +37,40 @@ Cypress.Commands.add('adminLogin', ()=> {
     studentPage.navbar.userLoggedIn(user.name)
 
 })
+
+Cypress.Commands.add('createEnroll', (dataTest) => {
+
+    cy.task('selectStudentId', dataTest.student.email)
+    .then(result => {
+
+        const user = users.admin
+
+        cy.request({
+            url: 'http://localhost:3333/sessions',
+            method: 'POST',
+            body: {
+                "email": user.email,
+                "password": user.password
+            }
+        }).then(response => {
+
+            const payload = {
+                "student_id": result.success.rows[0].id,
+                "plan_id": dataTest.plan.id,
+                "credit_card": "4242"
+            }
+
+            cy.request({
+                url: 'http://localhost:3333/enrollments',
+                method: 'POST',
+                headers: {
+                    Authorization: 'Bearer ' + response.body.token
+                },
+                body: payload
+            }).then(response => {
+                expect(response.status).to.eq(201)
+            })
+        })
+    })
+
+})
